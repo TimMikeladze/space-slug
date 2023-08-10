@@ -137,7 +137,6 @@ await spaceSlug([], {
 - [verb](#gear-verb)
 - [animal](#gear-animal)
 - [cosmos](#gear-cosmos)
-- [starwars](#gear-starwars)
 
 ### :gear: defaultWords
 
@@ -198,12 +197,6 @@ await spaceSlug([], {
 | Constant | Type |
 | ---------- | ---------- |
 | `cosmos` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
-
-### :gear: starwars
-
-| Constant | Type |
-| ---------- | ---------- |
-| `starwars` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
 
 
 

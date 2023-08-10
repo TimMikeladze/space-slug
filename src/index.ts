@@ -109,8 +109,6 @@ export const animal = word('animals');
 
 export const cosmos = word('cosmos');
 
-export const starwars = word('starwars');
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const digits = (count?: number) => (options: SpaceSlugOptions) => {
   const set = new Set<string>();
