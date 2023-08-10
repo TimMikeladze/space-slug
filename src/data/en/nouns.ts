@@ -1,4 +1,6 @@
 export const nouns = [
+  'jabba',
+  'hyperspace',
   'apple',
   'tree',
   'book',

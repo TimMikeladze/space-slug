@@ -1,4 +1,6 @@
 export const adjectives = [
+  'random',
+  'wonderful',
   'awesome',
   'super',
   'clean',
@@ -55,7 +57,6 @@ export const adjectives = [
   'enjoyable',
   'cuddly',
   'sweet',
-  'pleasurable',
   'inviting',
   'endearing',
   'amiable',

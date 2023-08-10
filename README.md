@@ -1,6 +1,6 @@
 # 🐌 space-slug
 
-Get a unique string that looks like this `hyperspace-4812` or this `blue-whimsical-summer`.
+Get a unique string that looks like this `wonderful-jabba` or this `hyperspace-4812`.
 
 Generate unique slugs, usernames, numbers, custom words, and more using an intuitive api with zero dependencies.
 
@@ -8,7 +8,7 @@ Generate unique slugs, usernames, numbers, custom words, and more using an intui
 const { spaceSlug } from 'space-slug';
 
 const slug = spaceSlug();
-// Returns: jabba-3921
+// Returns: joyful-illusion-30
 ```
 
 ## 📡 Install
@@ -27,9 +27,6 @@ pnpm add space-slug
 
 ```ts
 const { spaceSlug, color, digits, noun } from 'space-slug';
-
-const slug = spaceSlug();
-// Returns: serenity-2391
 
 const slug = spaceSlug([color(), noun(2), digits(3)], {
   separator: '_'
@@ -91,7 +88,7 @@ const { spaceSlug } from 'space-slug';
 await spaceSlug([], {
   transform: (x) => x.toUpperCase()
 });
-// Returns: HORIZON-1293
+// Returns: QUAINT-HORIZON-1293
 ```
 
 <!-- TSDOC_START -->
@@ -140,6 +137,7 @@ await spaceSlug([], {
 - [verb](#gear-verb)
 - [animal](#gear-animal)
 - [cosmos](#gear-cosmos)
+- [starwars](#gear-starwars)
 
 ### :gear: defaultWords
 
@@ -200,6 +198,12 @@ await spaceSlug([], {
 | Constant | Type |
 | ---------- | ---------- |
 | `cosmos` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+
+### :gear: starwars
+
+| Constant | Type |
+| ---------- | ---------- |
+| `starwars` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
 
 
 

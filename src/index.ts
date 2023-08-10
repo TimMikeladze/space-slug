@@ -109,6 +109,8 @@ export const animal = word('animals');
 
 export const cosmos = word('cosmos');
 
+export const starwars = word('starwars');
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const digits = (count?: number) => (options: SpaceSlugOptions) => {
   const set = new Set<string>();
@@ -169,7 +171,7 @@ export const spaceSlug = (
 
   // eslint-disable-next-line no-underscore-dangle
   const _spaceSlugFns = !spaceSlugFns?.length
-    ? [noun(1), digits(1)]
+    ? [adjective(1), noun(1), digits(2)]
     : spaceSlugFns;
 
   const slug = _spaceSlugFns.map((fn) => {

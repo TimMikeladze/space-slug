@@ -78,8 +78,9 @@ describe('digits', () => {
 describe('spaceSlug', () => {
   it('works by default', () => {
     const slug = spaceSlug();
+    console.log(slug);
     const parts = slug.split('-');
-    expect(parts).toHaveLength(2);
+    expect(parts).toHaveLength(3);
   });
   it('works', () => {
     const slug = spaceSlug([noun(2), animal(1), digits(3)]);
