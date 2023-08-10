@@ -146,10 +146,6 @@
     "vitest": "^0.34.0",
     "yalc": "1.0.0-pre.53"
   },
-  "peerDependencies": {
-    "react": ">=17",
-    "react-dom": ">=17"
-  },
   "resolutions": {
     "glob-parent": ">=5.1.2",
     "parse-url": ">=8.1.0",
