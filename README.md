@@ -1,6 +1,8 @@
 # 🐌 space-slug
 
-Generate unique slugs, usernames, numbers and more. If you need a unique string that looks like this `hyperspace-4812` or `blue-whimsical-summer` or is generated from a custom dictionary of words then this is the package for you.
+Get a unique string that looks like this `hyperspace-4812` or this `blue-whimsical-summer`.
+
+Generate unique slugs, usernames, numbers, custom words, and more using an intuitive api with zero dependencies.
 
 ```tsx
 const { spaceSlug } from 'space-slug';
@@ -89,27 +91,28 @@ await uniqueSpaceSlug([], {
 
 ### :gear: word
 
-| Function | Type                                                                                                  |
-| -------- | ----------------------------------------------------------------------------------------------------- |
-| `word`   | `(type: string) => (count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| Function | Type |
+| ---------- | ---------- |
+| `word` | `(type: string) => (count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: digits
 
-| Function | Type                                                             |
-| -------- | ---------------------------------------------------------------- |
+| Function | Type |
+| ---------- | ---------- |
 | `digits` | `(count?: number) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: uniqueSpaceSlug
 
-| Function          | Type                                                                                                     |
-| ----------------- | -------------------------------------------------------------------------------------------------------- |
+| Function | Type |
+| ---------- | ---------- |
 | `uniqueSpaceSlug` | `(spaceSlugFn: SpaceSlugFn[], options?: SpaceSlugOptions and UniqueSpaceSlugOptions) => Promise<string>` |
 
 ### :gear: spaceSlug
 
-| Function    | Type                                                                   |
-| ----------- | ---------------------------------------------------------------------- |
+| Function | Type |
+| ---------- | ---------- |
 | `spaceSlug` | `(spaceSlugFns?: SpaceSlugFn[], options?: SpaceSlugOptions) => string` |
+
 
 ## :wrench: Constants
 
@@ -126,70 +129,64 @@ await uniqueSpaceSlug([], {
 
 ### :gear: defaultWords
 
-| Constant       | Type                                                                                                                                                                                                        |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Constant | Type |
+| ---------- | ---------- |
 | `defaultWords` | `Record<string, Partial<{ [key: string]: string[]; adjectives: string[]; animals: string[]; colors: string[]; cosmos: string[]; emojis: string[]; nouns: string[]; seasons: string[]; verbs: string[]; }>>` |
 
 ### :gear: spaceSlugDefaultOptions
 
-| Constant                  | Type                        |
-| ------------------------- | --------------------------- |
+| Constant | Type |
+| ---------- | ---------- |
 | `spaceSlugDefaultOptions` | `Partial<SpaceSlugOptions>` |
 
 ### :gear: noun
 
-| Constant | Type                                                                                |
-| -------- | ----------------------------------------------------------------------------------- |
-| `noun`   | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| Constant | Type |
+| ---------- | ---------- |
+| `noun` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: adjective
 
-| Constant    | Type                                                                                |
-| ----------- | ----------------------------------------------------------------------------------- |
+| Constant | Type |
+| ---------- | ---------- |
 | `adjective` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: color
 
-| Constant | Type                                                                                |
-| -------- | ----------------------------------------------------------------------------------- |
-| `color`  | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| Constant | Type |
+| ---------- | ---------- |
+| `color` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: season
 
-| Constant | Type                                                                                |
-| -------- | ----------------------------------------------------------------------------------- |
+| Constant | Type |
+| ---------- | ---------- |
 | `season` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: emoji
 
-| Constant | Type                                                                                |
-| -------- | ----------------------------------------------------------------------------------- |
-| `emoji`  | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| Constant | Type |
+| ---------- | ---------- |
+| `emoji` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: verb
 
-| Constant | Type                                                                                |
-| -------- | ----------------------------------------------------------------------------------- |
-| `verb`   | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| Constant | Type |
+| ---------- | ---------- |
+| `verb` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: animal
 
-| Constant | Type                                                                                |
-| -------- | ----------------------------------------------------------------------------------- |
+| Constant | Type |
+| ---------- | ---------- |
 | `animal` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: cosmos
 
-| Constant | Type                                                                                |
-| -------- | ----------------------------------------------------------------------------------- |
+| Constant | Type |
+| ---------- | ---------- |
 | `cosmos` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
 
+
+
 <!-- TSDOC_END -->
-
-```
-
-```
-
-```
-
-```
