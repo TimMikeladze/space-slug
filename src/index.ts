@@ -75,9 +75,17 @@ export const word =
       throw new Error(`No words found for ${type}`);
     }
 
+    const c = count || 1;
+
+    if (c > words.length) {
+      throw new Error(
+        `Cannot generate ${c} unique words from ${words.length} words`
+      );
+    }
+
     const set = new Set<string>();
 
-    while (set.size < (count || 1)) {
+    while (set.size < c) {
       const index = Math.floor(Math.random() * words.length);
       set.add(words[index]);
     }

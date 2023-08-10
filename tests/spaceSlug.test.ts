@@ -38,6 +38,15 @@ describe('word', () => {
     expect(res.has('jabba')).toBe(true);
     expect(res.has('hutt')).toBe(true);
   });
+  it('throw error if count is more than words', () => {
+    expect(() =>
+      word('starwars')(3)({
+        locale: 'en',
+        dictionary,
+        separator: '-',
+      })
+    ).toThrowError();
+  });
 });
 
 describe('digits', () => {
