@@ -72,12 +72,24 @@ const slug = await uniqueSpaceSlug([
 const { uniqueSpaceSlug } from 'space-slug';
 
 await uniqueSpaceSlug([], {
+  maxAttempts: 10, // default is 10 attempts before throwing an error
   isUnique: async (slug) => {
     // check database to see if slug is unique
     return true;
   }
 });
 // Returns: a slug that you have verified is unique
+```
+
+## ✨ Transforming a slug
+
+```tsx
+const { spaceSlug } from 'space-slug';
+
+await spaceSlug([], {
+  transform: (x) => x.toUpperCase()
+});
+// Returns: HORIZON-1293
 ```
 
 <!-- TSDOC_START -->
