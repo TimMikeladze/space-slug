@@ -110,8 +110,6 @@ spaceSlug([
 // Returns: red-jabba-hutt-3979
 ```
 
-```tsx
-
 <!-- TSDOC_START -->
 
 ## :toolbox: Functions
