@@ -53,7 +53,9 @@ export type SpaceSlugOptions = {
 
 export type SpaceSlugFn = (options: SpaceSlugOptions) => SpaceSlugFnOutput;
 
-export type SpaceSlugFnOutput = Set<string>;
+export type SpaceSlugFnOutput = Set<string> | string | string[];
+
+export type SpaceSlugInput = SpaceSlugFn | SpaceSlugFnOutput;
 
 export type UniqueSpaceSlugOptions = {
   isUnique?: (slug: string) => Promise<boolean>;
@@ -118,12 +120,12 @@ export const digits = (count?: number) => (options: SpaceSlugOptions) => {
     set.add(index.toString());
   }
 
-  return new Set([Array.from(set).join('')]);
+  return Array.from(set).join('');
 };
 
 // eslint-disable-next-line no-underscore-dangle
 const _uniqueSpaceSlug = async (
-  spaceSlugFn: SpaceSlugFn[],
+  spaceSlugFn: SpaceSlugInput[],
   options: SpaceSlugOptions & UniqueSpaceSlugOptions,
   attempts: number
 ): Promise<string> => {
@@ -152,12 +154,12 @@ const _uniqueSpaceSlug = async (
 };
 
 export const uniqueSpaceSlug = async (
-  spaceSlugFn: SpaceSlugFn[],
+  spaceSlugFn: SpaceSlugInput[],
   options: SpaceSlugOptions & UniqueSpaceSlugOptions = {}
 ) => _uniqueSpaceSlug(spaceSlugFn, options, 1);
 
 export const spaceSlug = (
-  spaceSlugFns?: SpaceSlugFn[],
+  spaceSlugInputs?: SpaceSlugInput[],
   options: SpaceSlugOptions = {}
 ) => {
   const mergedOptions = {
@@ -168,13 +170,26 @@ export const spaceSlug = (
   const transformFn = mergedOptions.transform || ((x) => x);
 
   // eslint-disable-next-line no-underscore-dangle
-  const _spaceSlugFns = !spaceSlugFns?.length
+  const _spaceSlugFns = !spaceSlugInputs?.length
     ? [adjective(1), noun(1), digits(2)]
-    : spaceSlugFns;
+    : spaceSlugInputs;
 
   const slug = _spaceSlugFns.map((fn) => {
-    const set = fn(mergedOptions);
-    return transformFn(Array.from(set).join(mergedOptions.separator));
+    const set = typeof fn === 'function' ? fn(mergedOptions) : fn;
+
+    let s: string;
+
+    if (typeof set === 'string') {
+      s = set;
+    } else if (typeof set === 'object' && set instanceof Set) {
+      s = Array.from(set).join(mergedOptions.separator);
+    } else if (Array.isArray(set)) {
+      s = set.join(mergedOptions.separator);
+    } else {
+      throw new Error('Invalid space slug function output');
+    }
+
+    return transformFn(s);
   });
 
   return slug.join(mergedOptions.separator);

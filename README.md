@@ -91,6 +91,27 @@ await spaceSlug([], {
 // Returns: QUAINT-HORIZON-1293
 ```
 
+## ✏️ Using hard-coded values
+
+```tsx
+const { spaceSlug, color, digits } from 'space-slug';
+
+spaceSlug([
+  'jabba',
+  digits(),
+];
+// Returns: jabba-1293
+
+spaceSlug([
+  color(),
+  ['jabba', 'hutt'],
+  digits(),
+];
+// Returns: red-jabba-hutt-3979
+```
+
+```tsx
+
 <!-- TSDOC_START -->
 
 ## :toolbox: Functions
@@ -110,19 +131,19 @@ await spaceSlug([], {
 
 | Function | Type |
 | ---------- | ---------- |
-| `digits` | `(count?: number) => (options: SpaceSlugOptions) => Set<string>` |
+| `digits` | `(count?: number) => (options: SpaceSlugOptions) => string` |
 
 ### :gear: uniqueSpaceSlug
 
 | Function | Type |
 | ---------- | ---------- |
-| `uniqueSpaceSlug` | `(spaceSlugFn: SpaceSlugFn[], options?: SpaceSlugOptions and UniqueSpaceSlugOptions) => Promise<string>` |
+| `uniqueSpaceSlug` | `(spaceSlugFn: SpaceSlugInput[], options?: SpaceSlugOptions and UniqueSpaceSlugOptions) => Promise<string>` |
 
 ### :gear: spaceSlug
 
 | Function | Type |
 | ---------- | ---------- |
-| `spaceSlug` | `(spaceSlugFns?: SpaceSlugFn[], options?: SpaceSlugOptions) => string` |
+| `spaceSlug` | `(spaceSlugInputs?: SpaceSlugInput[], options?: SpaceSlugOptions) => string` |
 
 
 ## :wrench: Constants

@@ -57,9 +57,7 @@ describe('digits', () => {
       separator: '-',
     });
 
-    expect(res.size).toBe(1);
-    const [digit] = Array.from(res);
-    expect(digit).toHaveLength(4);
+    expect(res.length).toBe(4);
   });
 
   it('size 10', () => {
@@ -69,9 +67,7 @@ describe('digits', () => {
       separator: '-',
     });
 
-    expect(res.size).toBe(1);
-    const [digit] = Array.from(res);
-    expect(digit).toHaveLength(10);
+    expect(res.length).toBe(10);
   });
 });
 
@@ -161,6 +157,26 @@ describe('spaceSlug', () => {
     } else {
       expect(slug).toBe('HUTT-JABBA');
     }
+  });
+
+  it('hardcoded inputs', () => {
+    expect(
+      spaceSlug([word('starwars')(2), 'ezra'], {
+        dictionary,
+      }).endsWith('-ezra')
+    ).toBe(true);
+
+    expect(
+      spaceSlug([word('starwars')(2), ['ezra', 'holocron']], {
+        dictionary,
+      }).endsWith('-ezra-holocron')
+    ).toBe(true);
+
+    expect(
+      spaceSlug([word('starwars')(2), new Set(['ezra', 'holocron'])], {
+        dictionary,
+      }).endsWith('-ezra-holocron')
+    ).toBe(true);
   });
 });
 
