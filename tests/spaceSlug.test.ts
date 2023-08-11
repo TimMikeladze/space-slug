@@ -178,6 +178,34 @@ describe('spaceSlug', () => {
       }).endsWith('-ezra-holocron')
     ).toBe(true);
   });
+
+  it('cleans string', () => {
+    expect(
+      spaceSlug(
+        [
+          '#a very',
+          `b@d
+        string`,
+        ],
+        {
+          dictionary,
+        }
+      )
+    ).toBe('a-very-bd-string');
+
+    expect(
+      spaceSlug(['a very', 'b@d  string'], {
+        dictionary,
+        separator: '',
+      })
+    ).toBe('averybdstring');
+
+    expect(
+      spaceSlug(['-_foo!bar-', 'JABBA'], {
+        dictionary,
+      })
+    ).toBe('foobar-jabba');
+  });
 });
 
 describe('uniqueSpaceSlug', () => {

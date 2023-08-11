@@ -118,6 +118,7 @@ spaceSlug([
 
 - [word](#gear-word)
 - [digits](#gear-digits)
+- [cleanString](#gear-cleanstring)
 - [uniqueSpaceSlug](#gear-uniquespaceslug)
 - [spaceSlug](#gear-spaceslug)
 
@@ -132,6 +133,12 @@ spaceSlug([
 | Function | Type |
 | ---------- | ---------- |
 | `digits` | `(count?: number) => (options: SpaceSlugOptions) => string` |
+
+### :gear: cleanString
+
+| Function | Type |
+| ---------- | ---------- |
+| `cleanString` | `(inputString: string, separator: string) => string` |
 
 ### :gear: uniqueSpaceSlug
 

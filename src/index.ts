@@ -45,6 +45,7 @@ export type SpaceSlugDictionary = Partial<{
 }>;
 
 export type SpaceSlugOptions = {
+  cleanString?: (word: string) => string;
   dictionary?: Record<string, SpaceSlugDictionary>;
   locale?: string;
   separator?: string;
@@ -123,6 +124,12 @@ export const digits = (count?: number) => (options: SpaceSlugOptions) => {
   return Array.from(set).join('');
 };
 
+export const cleanString = (inputString: string, separator: string) =>
+  inputString
+    .replace(/[^a-zA-Z0-9\s]+/g, '')
+    .replace(/\s+/g, separator)
+    .trim();
+
 // eslint-disable-next-line no-underscore-dangle
 const _uniqueSpaceSlug = async (
   spaceSlugFn: SpaceSlugInput[],
@@ -167,12 +174,17 @@ export const spaceSlug = (
     ...options,
   };
 
-  const transformFn = mergedOptions.transform || ((x) => x);
+  const transformFn = mergedOptions.transform || ((x) => x.toLowerCase());
 
   // eslint-disable-next-line no-underscore-dangle
   const _spaceSlugFns = !spaceSlugInputs?.length
     ? [adjective(1), noun(1), digits(2)]
     : spaceSlugInputs;
+
+  // eslint-disable-next-line no-underscore-dangle
+  const _cleanString = options.cleanString
+    ? options.cleanString
+    : (s: string) => cleanString(s, mergedOptions.separator as string);
 
   const slug = _spaceSlugFns.map((fn) => {
     const set = typeof fn === 'function' ? fn(mergedOptions) : fn;
@@ -180,11 +192,11 @@ export const spaceSlug = (
     let s: string;
 
     if (typeof set === 'string') {
-      s = set;
+      s = _cleanString(set);
     } else if (typeof set === 'object' && set instanceof Set) {
-      s = Array.from(set).join(mergedOptions.separator);
+      s = Array.from(set).map(_cleanString).join(mergedOptions.separator);
     } else if (Array.isArray(set)) {
-      s = set.join(mergedOptions.separator);
+      s = set.map(_cleanString).join(mergedOptions.separator);
     } else {
       throw new Error('Invalid space slug function output');
     }
