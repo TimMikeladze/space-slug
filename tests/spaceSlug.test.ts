@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import {
   spaceSlug,
   animal,
-  defaultWords,
+  spaceSlugDefaultDictionary,
   digits,
   noun,
   word,
@@ -85,11 +85,17 @@ describe('spaceSlug', () => {
 
     expect(parts).toHaveLength(4);
 
-    expect(defaultWords.en.nouns!.includes(parts[0])).toBeTruthy();
+    expect(
+      spaceSlugDefaultDictionary.en.nouns!.includes(parts[0])
+    ).toBeTruthy();
 
-    expect(defaultWords.en.nouns!.includes(parts[1])).toBeTruthy();
+    expect(
+      spaceSlugDefaultDictionary.en.nouns!.includes(parts[1])
+    ).toBeTruthy();
 
-    expect(defaultWords.en.animals!.includes(parts[2])).toBeTruthy();
+    expect(
+      spaceSlugDefaultDictionary.en.animals!.includes(parts[2])
+    ).toBeTruthy();
 
     expect(parts[3]).toHaveLength(3);
   });

@@ -6,14 +6,14 @@ import {
   animals,
   verbs,
   cosmos as cosmosWords,
-} from './data/en';
+} from './dictionary/en';
 
-import { emojis } from './data/emojis';
+import { emojis } from './dictionary/emojis';
 
-export * from './data/emojis';
-export * from './data/en';
+export * from './dictionary/emojis';
+export * from './dictionary/en';
 
-export const defaultWords: Record<string, SpaceSlugDictionary> = {
+export const spaceSlugDefaultDictionary: Record<string, SpaceSlugDictionary> = {
   en: {
     seasons,
     emojis,
@@ -29,7 +29,7 @@ export const defaultWords: Record<string, SpaceSlugDictionary> = {
 export const spaceSlugDefaultOptions: Partial<SpaceSlugOptions> = {
   locale: 'en',
   separator: '-',
-  dictionary: defaultWords,
+  dictionary: spaceSlugDefaultDictionary,
 };
 
 export type SpaceSlugDictionary = Partial<{

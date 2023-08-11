@@ -130,7 +130,7 @@ spaceSlug([
 
 | Function | Type |
 | ---------- | ---------- |
-| `digits` | `(count?: number) => (options: SpaceSlugOptions) => string` |
+| `digits` | `(count?: number, noConsecutive?: boolean) => (options: SpaceSlugOptions) => string` |
 
 ### :gear: cleanString
 
@@ -153,7 +153,7 @@ spaceSlug([
 
 ## :wrench: Constants
 
-- [defaultWords](#gear-defaultwords)
+- [spaceSlugDefaultDictionary](#gear-spaceslugdefaultdictionary)
 - [spaceSlugDefaultOptions](#gear-spaceslugdefaultoptions)
 - [noun](#gear-noun)
 - [adjective](#gear-adjective)
@@ -164,11 +164,11 @@ spaceSlug([
 - [animal](#gear-animal)
 - [cosmos](#gear-cosmos)
 
-### :gear: defaultWords
+### :gear: spaceSlugDefaultDictionary
 
 | Constant | Type |
 | ---------- | ---------- |
-| `defaultWords` | `Record<string, Partial<{ [key: string]: string[]; adjectives: string[]; animals: string[]; colors: string[]; cosmos: string[]; emojis: string[]; nouns: string[]; seasons: string[]; verbs: string[]; }>>` |
+| `spaceSlugDefaultDictionary` | `Record<string, Partial<{ [key: string]: string[]; adjectives: string[]; animals: string[]; colors: string[]; cosmos: string[]; emojis: string[]; nouns: string[]; seasons: string[]; verbs: string[]; }>>` |
 
 ### :gear: spaceSlugDefaultOptions
 
