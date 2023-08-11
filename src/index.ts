@@ -112,17 +112,25 @@ export const animal = word('animals');
 
 export const cosmos = word('cosmos');
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const digits = (count?: number) => (options: SpaceSlugOptions) => {
-  const set = new Set<string>();
+export const digits =
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  (count?: number, noConsecutive?: boolean) => (options: SpaceSlugOptions) => {
+    const c = count || 4;
 
-  while (set.size < (count || 4)) {
-    const index = Math.floor(Math.random() * 10);
-    set.add(index.toString());
-  }
+    const list: string[] = [];
 
-  return Array.from(set).join('');
-};
+    while (list.length < c) {
+      const value = Math.floor(Math.random() * 10).toString();
+      const latest = list.length ? list[list.length - 1] : null;
+      if (noConsecutive && latest !== null && latest === value) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+      list.push(value);
+    }
+
+    return list.map((x) => x.toString()).join('');
+  };
 
 export const cleanString = (inputString: string, separator: string) =>
   inputString
