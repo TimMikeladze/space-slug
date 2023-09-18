@@ -80,6 +80,21 @@ await uniqueSpaceSlug([], {
 // Returns: a slug that you have verified is unique
 ```
 
+## 🦄 Making a slug unique
+
+```ts
+await uniqueSpaceSlug(['jabba'], {
+  isUnique: async (slug) => {
+    // a db lookup to see if slug is unique
+    return false;
+  },
+  makeUnique: async (slug) => {
+    // somehow make the slug unique
+    return slug + '-hutt';
+  }
+});
+```
+
 ## ✨ Transforming a slug
 
 ```tsx

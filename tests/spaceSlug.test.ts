@@ -74,7 +74,6 @@ describe('digits', () => {
 describe('spaceSlug', () => {
   it('works by default', () => {
     const slug = spaceSlug();
-    console.log(slug);
     const parts = slug.split('-');
     expect(parts).toHaveLength(3);
   });

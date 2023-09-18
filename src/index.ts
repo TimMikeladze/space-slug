@@ -60,6 +60,7 @@ export type SpaceSlugInput = SpaceSlugFn | SpaceSlugFnOutput;
 
 export type UniqueSpaceSlugOptions = {
   isUnique?: (slug: string) => Promise<boolean>;
+  makeUnique?: (slug: string) => Promise<string>;
   maxAttempts?: number;
   usedSlugs?: string[];
 };
@@ -161,6 +162,11 @@ const _uniqueSpaceSlug = async (
     const isUnique = await options.isUnique(slug);
 
     if (!isUnique) {
+      if (options.makeUnique) {
+        const uniqueSlug = await options.makeUnique(slug);
+        return _uniqueSpaceSlug([uniqueSlug], options, attempts + 1);
+      }
+
       return _uniqueSpaceSlug(spaceSlugFn, options, attempts + 1);
     }
   }
