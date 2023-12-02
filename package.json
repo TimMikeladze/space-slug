@@ -131,7 +131,7 @@
     "eslint-plugin-typescript-sort-keys": "2.3.0",
     "eslint-plugin-unused-imports": "3.0.0",
     "husky": "8.0.3",
-    "jsdom": "^22.1.0",
+    "jsdom": "^23.0.0",
     "lint-staged": "13.2.3",
     "prettier": "3.0.1",
     "prop-types": "15.8.1",
