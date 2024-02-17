@@ -1,7 +1,7 @@
 {
   "name": "space-slug",
   "description": "Generate unique slugs, usernames, numbers and more. If you need a unique string that looks like this `hyperspace-4812` or `blue-whimsical-summer` using an intuitive api with zero dependencies.",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "author": "Tim Mikeladze <tim.mikeladze@gmail.com>",
   "license": "MIT",
   "keywords": [
