@@ -37,16 +37,17 @@ const slug = spaceSlug([color(), noun(2), digits(3)], {
 ## 📚 Custom dictionaries and locales
 
 ```ts
-const { spaceSlug, words } from 'space-slug';
+const { spaceSlug, words, SpaceSlugDictionary } from 'space-slug';
 
-const starwars = words('starwars')
+const dictionary: SpaceSlugDictionary = {
+  en: {
+    starwars: ['jabba', 'hutt'],
+  },
+};
 
-const slug = spaceSlug([starwars(2), digits(2)], {
-  dictionary: {
-    en: {
-      starwars: ['jabba', 'ezra']
-    }
-  }
+const slug = spaceSlug([word('starwars')(2), digits(2)], {
+  dictionary,
+  locale: 'en',
 });
 /// Returns: jabba-ezra-39
 ```
@@ -183,7 +184,7 @@ spaceSlug([
 
 | Constant | Type |
 | ---------- | ---------- |
-| `spaceSlugDefaultDictionary` | `Record<string, Partial<{ [key: string]: string[]; adjectives: string[]; animals: string[]; colors: string[]; cosmos: string[]; emojis: string[]; nouns: string[]; seasons: string[]; verbs: string[]; }>>` |
+| `spaceSlugDefaultDictionary` | `SpaceSlugDictionary` |
 
 ### :gear: spaceSlugDefaultOptions
 

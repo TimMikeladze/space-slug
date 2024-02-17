@@ -10,11 +10,11 @@ import {
   SpaceSlugDictionary,
 } from '../src';
 
-const dictionary = {
+const dictionary: SpaceSlugDictionary = {
   en: {
     starwars: ['jabba', 'hutt'],
   },
-} as unknown as Record<string, SpaceSlugDictionary>;
+};
 
 describe('word', () => {
   it('size default', () => {

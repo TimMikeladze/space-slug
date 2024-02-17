@@ -13,7 +13,7 @@ import { emojis } from './dictionary/emojis';
 export * from './dictionary/emojis';
 export * from './dictionary/en';
 
-export const spaceSlugDefaultDictionary: Record<string, SpaceSlugDictionary> = {
+export const spaceSlugDefaultDictionary: SpaceSlugDictionary = {
   en: {
     seasons,
     emojis,
@@ -32,21 +32,24 @@ export const spaceSlugDefaultOptions: Partial<SpaceSlugOptions> = {
   dictionary: spaceSlugDefaultDictionary,
 };
 
-export type SpaceSlugDictionary = Partial<{
-  [key: string]: string[];
-  adjectives: string[];
-  animals: string[];
-  colors: string[];
-  cosmos: string[];
-  emojis: string[];
-  nouns: string[];
-  seasons: string[];
-  verbs: string[];
-}>;
+export type SpaceSlugDictionary = Record<
+  string,
+  Partial<{
+    [key: string]: string[];
+    adjectives: string[];
+    animals: string[];
+    colors: string[];
+    cosmos: string[];
+    emojis: string[];
+    nouns: string[];
+    seasons: string[];
+    verbs: string[];
+  }>
+>;
 
 export type SpaceSlugOptions = {
   cleanString?: (word: string) => string;
-  dictionary?: Record<string, SpaceSlugDictionary>;
+  dictionary?: SpaceSlugDictionary;
   locale?: string;
   separator?: string;
   transform?: (word: string) => string;
