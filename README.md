@@ -37,11 +37,11 @@ const slug = spaceSlug([color(), noun(2), digits(3)], {
 ## 📚 Custom dictionaries and locales
 
 ```ts
-const { spaceSlug, words, SpaceSlugDictionary } from 'space-slug';
+const { spaceSlug, word, SpaceSlugDictionary } from 'space-slug';
 
 const dictionary: SpaceSlugDictionary = {
   en: {
-    starwars: ['jabba', 'hutt'],
+    starwars: ['jabba', 'ezra'],
   },
 };
 
