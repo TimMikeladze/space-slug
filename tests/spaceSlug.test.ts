@@ -210,6 +210,17 @@ describe('spaceSlug', () => {
         dictionary,
       })
     ).toBe('foobar-jabba');
+
+    expect(spaceSlug(['space-slug'])).toEqual('space-slug');
+
+    expect(spaceSlug(['space--slug'])).toEqual('space-slug');
+
+    expect(
+      spaceSlug([
+        `-#
+space---slug-@-`,
+      ])
+    ).toEqual('space-slug');
   });
 });
 

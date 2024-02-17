@@ -135,9 +135,11 @@ export const digits =
 
 export const cleanString = (inputString: string, separator: string) =>
   inputString
-    .replace(/[^a-zA-Z0-9\s]+/g, '')
     .replace(/\s+/g, separator)
-    .trim();
+    .trim()
+    .replace(new RegExp(`[^a-zA-Z0-9${separator}]+`, 'g'), '')
+    .replace(new RegExp(`(?:${separator}){2,}`, 'g'), separator)
+    .replace(new RegExp(`^${separator}|${separator}$`, 'g'), '');
 
 // eslint-disable-next-line no-underscore-dangle
 const _uniqueSpaceSlug = async (
