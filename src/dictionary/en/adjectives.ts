@@ -68,4 +68,5 @@ export const adjectives = [
   'vibrant',
   'jovial',
   'radiant',
+  'celestial',
 ];
