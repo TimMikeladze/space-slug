@@ -140,13 +140,13 @@ spaceSlug([
 
 | Function | Type |
 | ---------- | ---------- |
-| `word` | `(type: string) => (count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| `word` | `(type: string) => (count?: number or undefined, _words?: string[] or undefined) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: digits
 
 | Function | Type |
 | ---------- | ---------- |
-| `digits` | `(count?: number, noConsecutive?: boolean) => (options: SpaceSlugOptions) => string` |
+| `digits` | `(count?: number or undefined, noConsecutive?: boolean or undefined) => (options: SpaceSlugOptions) => string` |
 
 ### :gear: cleanString
 
@@ -164,7 +164,7 @@ spaceSlug([
 
 | Function | Type |
 | ---------- | ---------- |
-| `spaceSlug` | `(spaceSlugInputs?: SpaceSlugInput[], options?: SpaceSlugOptions) => string` |
+| `spaceSlug` | `(spaceSlugInputs?: SpaceSlugInput[] or undefined, options?: SpaceSlugOptions) => string` |
 
 
 ## :wrench: Constants
@@ -196,49 +196,49 @@ spaceSlug([
 
 | Constant | Type |
 | ---------- | ---------- |
-| `noun` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| `noun` | `(count?: number or undefined, _words?: string[] or undefined) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: adjective
 
 | Constant | Type |
 | ---------- | ---------- |
-| `adjective` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| `adjective` | `(count?: number or undefined, _words?: string[] or undefined) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: color
 
 | Constant | Type |
 | ---------- | ---------- |
-| `color` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| `color` | `(count?: number or undefined, _words?: string[] or undefined) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: season
 
 | Constant | Type |
 | ---------- | ---------- |
-| `season` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| `season` | `(count?: number or undefined, _words?: string[] or undefined) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: emoji
 
 | Constant | Type |
 | ---------- | ---------- |
-| `emoji` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| `emoji` | `(count?: number or undefined, _words?: string[] or undefined) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: verb
 
 | Constant | Type |
 | ---------- | ---------- |
-| `verb` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| `verb` | `(count?: number or undefined, _words?: string[] or undefined) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: animal
 
 | Constant | Type |
 | ---------- | ---------- |
-| `animal` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| `animal` | `(count?: number or undefined, _words?: string[] or undefined) => (options: SpaceSlugOptions) => Set<string>` |
 
 ### :gear: cosmos
 
 | Constant | Type |
 | ---------- | ---------- |
-| `cosmos` | `(count?: number, _words?: string[]) => (options: SpaceSlugOptions) => Set<string>` |
+| `cosmos` | `(count?: number or undefined, _words?: string[] or undefined) => (options: SpaceSlugOptions) => Set<string>` |
 
 
 
