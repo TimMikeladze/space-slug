@@ -26,9 +26,9 @@ pnpm add space-slug
 ## 🚀 Getting Started
 
 ```ts
-const { spaceSlug, color, digits, noun } from 'space-slug';
+const { spaceSlug, adjective, color, digits, noun } from 'space-slug';
 
-const slug = spaceSlug([color(), noun(2), digits(3)], {
+const slug = spaceSlug([color(), adjective(), noun(1), digits(3)], {
   separator: '_'
 });
 // Returns: blue_celestial_labyrinth_718
