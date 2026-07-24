@@ -110,7 +110,7 @@
     "@types/node": "20.11.28",
     "@types/react": "18.2.67",
     "@types/react-dom": "18.2.22",
-    "@types/react-test-renderer": "18.0.7",
+    "@types/react-test-renderer": "19.1.0",
     "@typescript-eslint/eslint-plugin": "7.2.0",
     "@typescript-eslint/parser": "7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
